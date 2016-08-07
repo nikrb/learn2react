@@ -6,28 +6,14 @@ import axios from 'axios';
 export default class Main extends React.Component {
   constructor(){
     super();
-    this.comments = [];
+    this.val = 3;
   }
-  loadData(){
-    console.log( "@loadData");
-    axios.get( '/api/comments' )
-    .then( ( response) => {
-      console.log( "got comment response:", response.data);
-      //  this.setState( { response.data});
-    })
-    .catch( (error) => {
-      console.log( error);
-    });
-  }
-  componentDidMount(){
-    this.loadData();
+  getName(){
+    return "nik"+this.val;
   }
   render(){
     return (
-      <div className="example container">
-        <h1>This is three cool app!</h1>
-        <p>{this.comments}</p>
-      </div>
+      <h1>Hello from  {this.getName()}</h1>
     );
   }
 }
