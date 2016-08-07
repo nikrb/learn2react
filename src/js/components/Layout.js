@@ -6,17 +6,16 @@ import Footer from './Footer';
 export default class Layout extends React.Component {
   constructor(){
     super();
-    // use state only if this component affected
-    this.state = { name:"nik"};
+    this.state = { title: "Welcome!"};
   }
   render(){
-    setTimeout( () => {
-      this.setState( { name : "bob"});
-    }, 1000);
+    setTimeout( ()=>{
+      this.setState( { title: "Welcome Nik!"});
+    }, 2000)
     return (
       <div>
-        {this.state.name}
-        <Header />
+        <Header title={this.state.title} />
+        <Header title={"Other title"} />
         <Footer />
       </div>
     );
