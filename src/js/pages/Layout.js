@@ -9,11 +9,14 @@ export default class Layout extends React.Component {
     // this.context.router.pushState( null, "/");
   }
   render(){
+    // FIXME: again deprecated
+    const { history} = this.props;
+    console.log( history.isActive( "archives"));
     return (
       <div>
         <h1>KillerNews.net</h1>
         {this.props.children}
-        <Link to="archives" className="btn btn-danger">Archives</Link>
+        <Link to="archives" activeClassName="test">Archives</Link>
         <Link to="settings"><button className="btn btn-success">Settings</button></Link>
         <button onClick={this.navigate.bind(this)}>Featured</button>
       </div>
