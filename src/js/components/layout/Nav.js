@@ -22,6 +22,9 @@ export default class Nav extends React.Component {
     const settingsClass = location.pathname.match(/^\/settings/) ? "active" : "";
     const navClass = collapsed ? "collapse" : "";
 
+    // note unknown prop
+    // <li className={featuredClass} onlyActiveOnIndex={true}>
+
     return (
       <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div className="container">
@@ -35,7 +38,7 @@ export default class Nav extends React.Component {
           </div>
           <div className={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
-              <li className={featuredClass} onlyActiveOnIndex={true}>
+              <li className={featuredClass} >
                 <IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Featured</IndexLink>
               </li>
               <li className={archivesClass}>
