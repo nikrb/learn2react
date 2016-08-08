@@ -8,6 +8,26 @@ To start:
 3. run webpack to watch for front end changes
    webpack --watch
 
+`Will` uses class instead of react className. This is useful (for him) as he wanted
+to copy his html en-masse without having to rename all the class attribs to className.
+This is done by using the react-html-attrs package in webpack.config.js:
+module.exports = {
+  // ...
+  module : {
+    loaders : [
+      {
+        // ...
+        query: {
+          presets: ['react', 'es2015', 'stage-0'],
+          plugins: ['react-html-attrs', 'transform-class-properties',
+                                            'transform-decorators-legacy'],
+        }
+      }
+    ]
+  }
+  // ...
+}
+
 On the way here ...
 trying to run backend api with webpack
 finding process:
